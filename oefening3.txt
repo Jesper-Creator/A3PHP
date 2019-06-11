@@ -1,0 +1,4 @@
+PHP Object Oriented Programming(OOP)
+
+het verschil tussen:
+private, protected & public.
