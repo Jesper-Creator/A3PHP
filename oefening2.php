@@ -1,40 +1,51 @@
 <?php
 
-
-
     class User{
 
-      public $voornaam;
-      public $achternaam;
-      public $geboortedatum;
+      private $voornaam;
+      private $achternaam;
+      private $geboortedatum;
 
-        public function setUserinfo($name, $surname, $birthDate)
+        // Setters
+        public function setUserNaam($name)
         {
           $this->voornaam = $name;
-          $this->achternaam = $surname;
-          $this->geboortedatum = $birthDate;
         }
 
-        public function getUserinfo()
+        public function setUserAchternaam($achternaam)
+        {
+          $this->achternaam = $achternaam;
+        }
+
+        public function setUserGeboortedatum($geboortedatum)
+        {
+          $this->geboortedatum = $geboortedatum;
+        }
+        // Getters
+        public function getUserNaam()
         {
           return $this->voornaam;
+        }
+
+        public function getUserAchternaam()
+        {
           return $this->achternaam;
+        }
+
+        public function getUserGeboortedatum()
+        {
           return $this->geboortedatum;
         }
 
     }
 
-
           //de waarden meegeven aan de set
           $user = new User();
-          $user->setUserinfo("Kevin", "Koster", "7 oktober 2001");
+          $user->setUserNaam("Kevin, ");
+          $user->setUserAchternaam("Koster, ");
+          $user->setUserGeboortedatum("7 oktober 2001");
 
-          echo $user->getUserinfo();
-
-
-
-
-
-
-
+          echo $user->getUserNaam();
+          echo $user->getUserAchternaam();
+          echo $user->getUserGeboortedatum();
  ?>
