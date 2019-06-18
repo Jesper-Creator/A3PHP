@@ -41,7 +41,7 @@
 
           //de waarden meegeven aan de set
           $user = new User();
-          $user->setUserNaam("Kevin, ");
+          $user->setUserNaam("Kevin ");
           $user->setUserAchternaam("Koster, ");
           $user->setUserGeboortedatum("7 oktober 2001");
 
