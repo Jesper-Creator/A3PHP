@@ -1,51 +1,40 @@
 <?php
 
-    class User{
+  class User{
 
-      private $voornaam;
-      private $achternaam;
-      private $geboortedatum;
+    public $name;
+    public $surname;
+    public $birthDate;
 
-        // Setters
-        public function setUserNaam($name)
-        {
-          $this->voornaam = $name;
-        }
+      public function __construct($name, $surname, $birthDate) {
 
-        public function setUserAchternaam($achternaam)
-        {
-          $this->achternaam = $achternaam;
-        }
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->birthDate = $birthDate;
 
-        public function setUserGeboortedatum($geboortedatum)
-        {
-          $this->geboortedatum = $geboortedatum;
-        }
-        // Getters
-        public function getUserNaam()
-        {
-          return $this->voornaam;
-        }
+      }
 
-        public function getUserAchternaam()
-        {
-          return $this->achternaam;
-        }
 
-        public function getUserGeboortedatum()
-        {
-          return $this->geboortedatum;
-        }
+  }
 
-    }
-
-          //de waarden meegeven aan de set
-          $user = new User();
-          $user->setUserNaam("Kevin ");
-          $user->setUserAchternaam("Koster, ");
-          $user->setUserGeboortedatum("7 oktober 2001");
-
-          echo $user->getUserNaam();
-          echo $user->getUserAchternaam();
-          echo $user->getUserGeboortedatum();
  ?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oefening 5</title>
+  </head>
+  <body>
+
+    <?php
+
+      $user1 = new User("Kevin", "Koster", "7 oktober 2001");
+      echo $user1->name;
+      echo " ". $user1->surname . ",";
+      echo " ". $user1->birthDate;
+
+     ?>
+
+  </body>
+</html>
