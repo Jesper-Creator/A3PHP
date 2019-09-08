@@ -41,9 +41,9 @@
 
           //de waarden meegeven aan de set
           $user = new User();
-          $user->setUserNaam("Kevin, ");
-          $user->setUserAchternaam("Koster, ");
-          $user->setUserGeboortedatum("7 oktober 2001");
+          $user->setUserNaam("Jesper, ");
+          $user->setUserAchternaam("Borst, ");
+          $user->setUserGeboortedatum("13 mei 2003");
 
           echo $user->getUserNaam();
           echo $user->getUserAchternaam();
