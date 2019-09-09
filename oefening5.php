@@ -1,40 +1,20 @@
 <?php
 
-  class User{
+class User{
+  public $voornaam;
+  public $achternaam;
+  public $geboortedatum;
 
-    public $name;
-    public $surname;
-    public $birthDate;
-
-      public function __construct($name, $surname, $birthDate) {
-
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->birthDate = $birthDate;
-
-      }
-
-
+//De variabelen met een hoofdletter X geven aan dat dit niet exact dezelfde variabelen zijn als hierboven.
+  public function __construct($voornaamX, $achternaamX, $geboortedatumX) {
+    $this->voornaam = $voornaamX;
+    $this->achternaam = $achternaamX;
+    $this->geboortedatum = $geboortedatumX;
   }
+}
 
+$user = new User("Jesper", "Borst", "13-05-2003");
+echo $user->voornaam.", ";
+echo $user->achternaam.", ";
+echo $user->geboortedatum;
  ?>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Oefening 5</title>
-  </head>
-  <body>
-
-    <?php
-
-      $user1 = new User("Kevin", "Koster", "7 oktober 2001");
-      echo $user1->name." ";
-      echo $user1->surname.", ";
-      echo $user1->birthDate;
-
-     ?>
-
-  </body>
-</html>
