@@ -30,9 +30,9 @@
     <?php
 
       $user1 = new User("Kevin", "Koster", "7 oktober 2001");
-      echo $user1->name;
-      echo " ". $user1->surname . ",";
-      echo " ". $user1->birthDate;
+      echo $user1->name." ";
+      echo $user1->surname.", ";
+      echo $user1->birthDate;
 
      ?>
 
