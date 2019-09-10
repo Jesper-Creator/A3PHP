@@ -47,5 +47,14 @@
 
           echo $user->getUserNaam();
           echo $user->getUserAchternaam();
+          echo $user->getUserGeboortedatum(). "<br>";
+
+          $user = new User();
+          $user->setUserNaam("Jesper ");
+          $user->setUserAchternaam("Borst, ");
+          $user->setUserGeboortedatum("13 mei 2003");
+
+          echo $user->getUserNaam();
+          echo $user->getUserAchternaam();
           echo $user->getUserGeboortedatum();
  ?>
