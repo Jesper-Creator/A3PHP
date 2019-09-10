@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="master.css">
+    <title>Eindopdracht 1 PHP</title>
+  </head>
+  <body>
+
+<img src="jeppiehome.png" alt="">
+
+<h1>Kenmerken:</h1>
+
 <?php
 
 
@@ -12,7 +25,8 @@
       public $verwarming;
       public $type;
       public $woz;
-      public $belasting;
+      public $belasting = 0;
+      public $kamerbelasting = 0;
 
 
       public function __construct($straatnaam, $huisnummer, $plaats, $oppervlakte, $kamers, $toiletten, $verwarming, $type, $woz){
@@ -33,22 +47,36 @@
         $this->type."<br> WOZ-waarde: ".$this->woz;
       }
 
-      public function calcBelasting(){
+      public function wozBelasting(){
         if ($this->woz < 100000) {
-          $belasting + 600;
+          return $this->belasting = 600;
         } elseif ($this->woz > 200000) {
-          $belasting + 6000;
+          return $this->belasting = 6000;
         } else {
-          $belasting + 2000;
+          return $this->belasting = 2000;
         }
-        return $this->belasting = $belasting;
+      }
+
+      public function kamerBelasting(){
+        if ($this->kamers < 2) {
+          return $this->kamerbelasting = 100;
+        } elseif ($this->kamers > 3) {
+          return $this->kamerbelasting = 800;
+        } else {
+          return $this->kamerbelasting = 300;
+        }
+      }
+
+      public function totaalBelasting(){
+        return $this->wozBelasting()+$this->kamerBelasting();
       }
 
   }
 
   $huis = new Huis("Rijksweg", 56, "Dieverbrug", "526m²", 8, 2, "ja", "CV-ketel", 387000);
   echo $huis->getInfo();
-  echo $huis->calcBelasting();
+  echo "<br>";
+  echo "Te betalen belasting: ". $huis->totaalBelasting();
 
 
 
@@ -57,13 +85,5 @@
 
  ?>
 
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <title>Jeppie zijn huis</title>
-   </head>
-   <body>
-     <img style="float: right;" src="jeppiehome.png" alt="">
    </body>
  </html>

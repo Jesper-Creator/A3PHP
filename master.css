@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+html{
+  background-color: #a8a8a8;
+}
+
+img {
+  float: right;
+}
+
+body{
+  margin-left: 100px;
+}
