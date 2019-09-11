@@ -9,7 +9,7 @@
 
     <h1>Memory Game</h1>
 
-    <section class="game">
+    <div class="game">
       <div class="card">
         <img class="front-face" src="img/one.svg" alt="One">
       </div>
@@ -57,7 +57,8 @@
         <div class="card">
           <img class="front-face" src="img/eight.svg" alt="eight">
       </div>
-    </section>
+    </div>
+
 
   </body>
 </html>
