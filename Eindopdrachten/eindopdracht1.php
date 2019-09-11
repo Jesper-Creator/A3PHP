@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="../master.css">
     <title>Eindopdracht 1 PHP</title>
   </head>
   <body>
 
-<img src="jeppiehome.png" alt="">
+<img src="../jeppiehome.png" alt="">
 
 <h1>Kenmerken:</h1>
 
