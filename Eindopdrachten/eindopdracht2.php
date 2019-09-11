@@ -11,52 +11,47 @@
 
     <div class="game">
       <div class="card">
-        <img class="front-face" src="img/one.svg" alt="One">
+        <a href="?number=1"><img class="front-face" src="img/one.svg" alt="One"></a>
       </div>
-      <div class="card">
-        <img class="front-face" src="img/one.svg" alt="One">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/two.svg" alt="Two">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/two.svg" alt="Two">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/three.svg" alt="Three">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/three.svg" alt="Three">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/four.svg" alt="four">
-      </div>
-      <div class="card">
-        <img class="front-face" src="img/four.svg" alt="four">
+      <?php
+        if(isset($_GET['number'])) {
+          if($_GET['number'] ==  1){
+            ?>
+            <div class="card">
+              <img class="front-face" src="img/one.svg" alt="One">
+            </div>
+            <?php
+            }
+        }
+       ?>
+       <div class="card">
+         <a href="?number=2"><img class="front-face" src="img/two.svg" alt="One"></a>
+       </div>
+       <?php
+         if(isset($_GET['number'])) {
+           if($_GET['number'] ==  2){
+             ?>
+             <div class="card">
+               <img class="front-face" src="img/two.svg" alt="One">
+             </div>
+             <?php
+             }
+         }
+        ?>
         <div class="card">
-          <img class="front-face" src="img/five.svg" alt="five">
+          <a href="?number=3"><img class="front-face" src="img/three.svg" alt="One"></a>
         </div>
-        <div class="card">
-          <img class="front-face" src="img/five.svg" alt="five">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/six.svg" alt="six">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/six.svg" alt="six">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/seven.svg" alt="seven">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/seven.svg" alt="seven">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/eight.svg" alt="eight">
-        </div>
-        <div class="card">
-          <img class="front-face" src="img/eight.svg" alt="eight">
-      </div>
+        <?php
+          if(isset($_GET['number'])) {
+            if($_GET['number'] ==  3){
+              ?>
+              <div class="card">
+                <img class="front-face" src="img/three.svg" alt="One">
+              </div>
+              <?php
+              }
+          }
+         ?>
     </div>
 
 
