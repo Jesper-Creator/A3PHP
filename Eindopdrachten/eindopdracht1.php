@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../master.css">
+    <link rel="stylesheet" href="../eindopdr1.css">
     <title>Eindopdracht 1 PHP</title>
   </head>
   <body>
