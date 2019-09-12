@@ -2,21 +2,36 @@
 class Game {
   //Hier wordt de array aangemaakt.
   private $cards = array();
+  private $score = 0;
   //Hier worden de kaarten (2x8 kaarten), in de array gepushed.
-  function __construct(){
-    for($i=1;$i<9;$i++){
-      array_push($this->cards, new Card($i));
-      array_push($this->cards, new Card($i));
+  function __construct($new){
+    session_start();
+    if(isset($_SESSION['game']) && !$new){
+      $this->cards = $_SESSION['game'];
+    } else {
+      for($i=1;$i<9;$i++){
+        array_push($this->cards, new Card($i));
+        array_push($this->cards, new Card($i));
+      }
     }
-  }
-  //????????????????????????
-  public function getCards(){
-    return $this->cards;
   }
   //????????????????????????
   public function getCard($index){
     return $this->cards[$index];
   }
+
+  public function countCards(){
+    return count($this->cards);
+  }
+
+  public function saveState(){
+    $_SESSION['game'] = $this->cards;
+  }
+
+  public function turnCard($index){
+    $this->cards[$index]->turn();
+  }
+
 }
 
  ?>
