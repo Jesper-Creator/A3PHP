@@ -15,7 +15,6 @@ class Game {
       }
     }
   }
-  //????????????????????????
   public function getCard($index){
     return $this->cards[$index];
   }
@@ -29,8 +28,27 @@ class Game {
   }
 
   public function turnCard($index){
+    $firstopen = null;
     $this->cards[$index]->turn();
+    for ($i=0; $i < $this->countCards(); $i++) {
+      if ($this->cards[$i]->getState()=="open") {
+        if (is_null($firstopen)) {
+          $firstopen = $this->cards[$i];
+        } else {
+          if ($this->cards[$i]->getNumber()==$firstopen->getNumber()) {
+            $this->cards[$i]->setState("guessed");
+            $firstopen->setState("guessed");
+          } else {
+            $this->cards[$i]->turn();
+            $firstopen->turn();
+          }
+        }
+      }
+    }
   }
+
+
+
 
 }
 

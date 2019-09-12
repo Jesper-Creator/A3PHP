@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/master.css">
     <title></title>
   </head>
   <body>
@@ -16,7 +17,7 @@
       } else {
         $game = new Game(false);
       }
-      //klikken kaart verweken
+      //klikken kaart verwerken
       if(isset($_GET['card'])){
         $game->turnCard($_GET['card']);
       }
