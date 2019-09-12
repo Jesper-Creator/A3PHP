@@ -12,6 +12,7 @@ class Game {
       for($i=1;$i<9;$i++){
         array_push($this->cards, new Card($i));
         array_push($this->cards, new Card($i));
+        shuffle($this->cards);
       }
     }
   }
