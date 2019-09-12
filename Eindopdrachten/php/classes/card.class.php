@@ -8,21 +8,16 @@
     public function getHTML(){
       switch ($this->state) {
         case 'open':
-          return "<img src=\"img/card" . $this->number . ".svg" . "\" height=\"30px\">";
+          return "<img src=\"img/card" . $this->number . ".svg" . "\" height=\"50px\">";
           break;
         case 'guessed':
-          return "<img class=\"guessed\" src=\"img/card" . $this->number . ".svg" . "\" height=\"30px\">";
+          return "<img class=\"guessed\" src=\"img/card" . $this->number . ".svg" . "\" height=\"50px\">";
           break;
 
         default:
-          return "<img src=\"img/card_back.jpg" . "\" height=\"30px\">";
+          return "<img src=\"img/card_back.jpg" . "\" height=\"50px\">";
           break;
       }
-      // if($this->state == "open" || $this->state == "guessed" ){
-      //   return "<img src=\"img/card" . $this->number . ".svg" . "\" height=\"30px\">";
-      // } else {
-      //   return "<img src=\"img/card_back.jpg" . "\" height=\"30px\">";
-      // }
     }
 
     public function turn(){
