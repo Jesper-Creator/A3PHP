@@ -13,7 +13,6 @@
         case 'guessed':
           return "<img class=\"guessed\" src=\"img/card" . $this->number . ".svg" . "\" height=\"50px\">";
           break;
-
         default:
           return "<img src=\"img/card_back.jpg" . "\" height=\"50px\">";
           break;
