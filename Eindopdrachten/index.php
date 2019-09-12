@@ -10,12 +10,25 @@
       require_once("php/inc/default.inc.php");
 
       //Start een nieuwe Game
-      $game = new Game();
-      //???????????????????????????????????????????????
-      for($c=0; $c < count($game->getCards()); $c++){
-        echo $game->getCard($c)->getCard() . "<br>";
+      //Start nieuw spel als end is aangeklikt
+      if(isset($_GET['end'])){
+        $game = new Game(true);
+      } else {
+        $game = new Game(false);
       }
+      //klikken kaart verweken
+      if(isset($_GET['card'])){
+        $game->turnCard($_GET['card']);
+      }
+      //zet kaarten op pagina
+      for($c=0; $c < $game->countCards(); $c++){
+        echo "<a href=\"?card=$c\">" . $game->getCard($c)->getHTML() . "</a>";
+      }
+      //sla huidige game op
+      $game->saveState();
     ?>
+
+    <a href="?end"><button type="button" name="button">New</button></a>
 
   </body>
 </html>
