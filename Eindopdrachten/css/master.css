@@ -1,6 +1,11 @@
+html
+{
+  background-color: #383838;
+}
+
 .guessed
 {
-  background-color: red;
+  background-color: #d1d1d1;
 }
 
 img
