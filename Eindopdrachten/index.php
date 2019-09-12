@@ -6,6 +6,7 @@
     <title></title>
   </head>
   <body>
+
     <?php
       //Deze require verwijst naar de autoload.
       require_once("php/inc/default.inc.php");
@@ -29,7 +30,7 @@
       $game->saveState();
     ?>
 
-    <a href="?end"><button type="button" name="button">New</button></a>
+    <a href="?end"><button type="button" name="button">New game</button></a>
 
   </body>
 </html>

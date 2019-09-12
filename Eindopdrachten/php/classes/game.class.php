@@ -28,10 +28,13 @@ class Game {
     $_SESSION['game'] = $this->cards;
   }
 
+//draait de kaart om
   public function turnCard($index){
     $firstopen = null;
     $this->cards[$index]->turn();
+    //gaat door de kaarten heen
     for ($i=0; $i < $this->countCards(); $i++) {
+      //checkt of de state van de kaart open of closed is.
       if ($this->cards[$i]->getState()=="open") {
         if (is_null($firstopen)) {
           $firstopen = $this->cards[$i];
