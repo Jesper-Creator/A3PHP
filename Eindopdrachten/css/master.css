@@ -19,4 +19,18 @@ button
   border: none;
   padding: 10px;
   background-color: rgb(213, 213, 213);
+  margin-left: 50%;
+}
+
+.main
+{
+  max-width: 320px;
+  margin: auto;
+  width: 50%;
+}
+
+.memTxt
+{
+  color: white;
+  text-align: center;
 }
