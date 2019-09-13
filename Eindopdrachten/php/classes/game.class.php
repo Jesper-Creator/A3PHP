@@ -3,6 +3,7 @@ class Game {
   //Hier wordt de array aangemaakt.
   private $cards = array();
   private $score = 0;
+  private $finished = false;
   //Hier worden de kaarten (2x8 kaarten), in de array gepushed.
   function __construct($new){
     session_start();
@@ -21,6 +22,10 @@ class Game {
     return $this->cards[$index];
   }
 
+  public function getFinished(){
+    return $this->finished;
+  }
+
   public function countCards(){
     return count($this->cards);
   }
@@ -31,10 +36,14 @@ class Game {
 
 //draait de kaart om
   public function turnCard($index){
+    $guessed = 0;
     $firstopen = null;
     $this->cards[$index]->turn();
     //gaat door de kaarten heen
     for ($i=0; $i < $this->countCards(); $i++) {
+      if ($this->cards[$i]->getState() == "guessed") {
+        $guessed++;
+      }
       //checkt of de state van de kaart open of closed is.
       if ($this->cards[$i]->getState()=="open") {
         if (is_null($firstopen)) {
@@ -43,12 +52,16 @@ class Game {
           if ($this->cards[$i]->getNumber()==$firstopen->getNumber()) {
             $this->cards[$i]->setState("guessed");
             $firstopen->setState("guessed");
+            $guessed+=2;
           } else {
             $this->cards[$i]->turn();
             $firstopen->turn();
           }
         }
       }
+    }
+    if ($guessed == 16) {
+      $this->finished = true;
     }
   }
 

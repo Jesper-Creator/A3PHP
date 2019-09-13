@@ -33,8 +33,13 @@
     }
     //sla huidige game op
     $game->saveState();
+
+    if ($game->getFinished()) {
+      echo "Gewonnen.";
+    }
     ?>
   </div>
+
 
     <a href="?end"><button type="button" name="button">Restart</button></a>
 
