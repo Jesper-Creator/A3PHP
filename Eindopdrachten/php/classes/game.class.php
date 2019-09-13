@@ -16,6 +16,7 @@ class Game {
       }
     }
   }
+
   public function getCard($index){
     return $this->cards[$index];
   }
@@ -55,5 +56,6 @@ class Game {
 
 
 }
+
 
  ?>
