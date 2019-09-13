@@ -5,6 +5,7 @@
     public function __construct($number){
       $this->number = $number;
     }
+    
     public function getHTML(){
       switch ($this->state) {
         case 'open':
