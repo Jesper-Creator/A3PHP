@@ -9,6 +9,8 @@
 
     <h1 class="memTxt">Memory Game</h1>
 
+
+
   <div class="main">
     <?php
     //Deze require verwijst naar de autoload.
